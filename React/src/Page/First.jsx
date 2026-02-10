@@ -4,6 +4,7 @@ import { useState } from "react";
 function First() {
     const [active, setActive] = useState(null);
     const [activeTab, setActiveTab] = useState("muscle");
+    const [popup, setPopup] = useState(false);
 
     return (
 
@@ -16,7 +17,7 @@ function First() {
 
                         Mitopure® is the
                         <div className="flex justify-center w-max h-65px">
-                            <div className="inline-flex items-center text-7xl font-medium ">
+                            <div className="inline-flex items-center text-5xl lg:text-7xl font-medium ">
 
                                 <span>supplement</span>
 
@@ -25,7 +26,7 @@ function First() {
                                         src="https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/354783ebfd041f0c941c51a750ac446148d17831-1200x1200.png?w=3840&h=3840&q=80&fit=crop&auto=format"
                                         alt="Mitopure"
                                         className="w-full h-full object-contain"
-                                        />
+                                    />
                                 </span>
                                 <span>that changes</span>
 
@@ -38,13 +39,13 @@ function First() {
             </section>
 
             {/* SECTION 2 — IMAGE BANNER */}
-            <section className="w-full h-[500px] overflow-hidden">
-
-                <img
-                    src="https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/88607c574cd02d60d8487359fcffbb4fe56e4832-1596x2038.png?rect=0,221,1596,1596&w=1920&h=1920&q=80&fit=crop&auto=format"
-                    alt="banner"
-                    className="w-full h-full object-cover"
-                />
+            <section
+                className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen bg-center bg-cover flex items-center"
+                style={{
+                    backgroundImage:
+                        "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80')",
+                }}
+            >
 
             </section>
 
@@ -58,10 +59,7 @@ function First() {
                     className="w-full h-full object-cover"
                 />
 
-                {/* Dark Overlay */}
-                {/* <div className="absolute inset-0"></div> */}
 
-                {/* Text Content */}
                 <div className="absolute inset-0 flex items-start justify-center text-center px-6 ">
 
                     <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold max-w-3xl leading-tight mt-15">
@@ -71,7 +69,6 @@ function First() {
 
                     <div className="absolute top-[22%] left-[30%] z-20">
 
-                        {/* Button */}
                         <button
                             onClick={() => setActive(active === 1 ? null : 1)}
                             className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
@@ -684,11 +681,10 @@ function First() {
             </section>
 
             {activeTab === "NewSectionPage" && (
-                <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
+                <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
 
                     {/* Modal Box */}
-                    <div className="relative bg-white w-[95%] max-w-7xl max-h-[90vh] overflow-y-auto rounded-lg p-8">
-
+                    <div className="relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-8">
                         {/* ❌ Close Button */}
                         <button
                             onClick={() => setActiveTab(null)}
@@ -755,11 +751,10 @@ function First() {
                 </div>
             )}
             {activeTab === "NewSection" && (
-                <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
+                <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
 
                     {/* Modal Box */}
-                    <div className="relative bg-[#faf9f6] w-[95%] max-w-7xl max-h-[90vh] overflow-y-auto rounded-lg p-8">
-
+                    <div className="relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-8">
                         {/* ❌ Close Button */}
                         <button
                             onClick={() => setActiveTab(null)}
@@ -847,7 +842,7 @@ function First() {
             </section>
 
             {/*Section 7 */}
-            <section className="w-full h-[400px] mt-4 px-6 bg-black">
+            <section className="w-full h-[400px] mt-4 ">
                 <div
                     className="w-full h-full bg-cover bg-center flex  items-center"
                     style={{
@@ -855,29 +850,9 @@ function First() {
                             "url('https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/8c611702abdea847d301886430526fc7180c3e84-2800x739.jpg?rect=1,0,2799,739&w=1920&h=507&q=80&fit=crop&auto=format')",
                     }}
                 >
-                    <div className="grid">
+                    <div className="grid mx-2">
                         <div className="flex h-15 w-55">
-                            <h1 className="text-white text-[18px]">Powered by</h1>
-                            <svg
-                                viewBox="0 0 86 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-22 h-auto text-white ml-2"
-                                focusable="false"
-                            >
-                                {/* Background */}
-                                <path
-                                    d="M73.4042 24H12C5.40416 24 0 18.5958 0 12C0 5.40416 5.40416 0 12 0H73.4042C80 0 85.4042 5.40416 85.4042 12C85.4042 18.5958 80 24 73.4042 24Z"
-                                    fill="currentColor"
-                                />
-
-                                {/* Text/Icon */}
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M48.4431 8.42509C49.1636 8.85003..."
-                                    fill="#FFFFFC"
-                                />
-                            </svg>
+                            <h1 className="text-white text-[18px]">Powered by <span className="bg-[#C2483F] text-white text-[16px] p-1 rounded-md mx-2">mitopure®</span></h1>
                         </div>
                         <div className="w-130 text-3xl">
                             <span>
