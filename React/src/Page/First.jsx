@@ -507,10 +507,10 @@ function First() {
 
             <section>
                 <div className="flex mt-4">
-                    <div className="w-280 h-200 sticky top-0">
+                    <div className="w-280 h-200 sticky-top-0">
                         <img src="https://framerusercontent.com/images/lhYregdmE8CAlEFJAfnpegYVsGY.png?scale-down-to=1024&width=2048&height=2048" alt="network issue"
                             loading="lazy"
-                            className="w-full h-full object-cover " />
+                            className="w-full h-full object-cover  sticky-top-0" />
                     </div>
                     <div >
                         <div className="w-full h-50 justify-start overflow-y-auto">
@@ -557,11 +557,11 @@ function First() {
 
             </section>
             <section>
-                <div className="flex mt-16">
+                <div className="flex mt-12">
                     <div className="w-340 h-200 sticky top-0">
                         <img src="https://framerusercontent.com/images/mrwQTr8nmT9NwJAlyxFFxgBpms.png?scale-down-to=1024&width=2048&height=2048" alt="network issue"
                             loading="lazy"
-                            className="w-full h-full object-cover " />
+                            className="w-full h-full object-cover sticky-top-0" />
                     </div>
                     <div >
                         <div className="w-full h-50 justify-start overflow-y-auto">
