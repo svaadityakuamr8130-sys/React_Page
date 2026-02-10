@@ -83,7 +83,7 @@ function First() {
                             <div className="absolute left-12 top-0 w-[360px] bg-white p-5 rounded-xl shadow-2xl text-left max-h-[350px] overflow-y-auto">
 
                                 {/* Title */}
-                                <h3 className="font-semibold text-xl mb-2">
+                                <h3 className="font-semibold text-2xl mb-2">
                                     Brain
                                 </h3>
 
@@ -155,7 +155,7 @@ function First() {
                         {active === 2 && (
                             <div className="absolute left-12 top-0 w-[360px] bg-white p-4 rounded-lg shadow-xl text-left max-h-[350px] overflow-y-auto">
 
-                                <h3 className="font-semibold text-lg mb-2">
+                                <h3 className="font-semibold text-2xl mb-2">
                                     Energy
                                 </h3>
 
@@ -217,7 +217,7 @@ function First() {
                         </button>
 
                         {active === 3 && (
-                            <div className="absolute left-12 top-0 w-[360px] bg-white p-4 rounded-lg shadow-xl text-left">
+                            <div className="absolute left-12 top-0 w-[360px] bg-white p-4 rounded-lg shadow-xl text-left max-h-[350px] overflow-y-auto">
 
                                 <h3 className="font-semibold text-2xl mb-3 ">
                                     Immune system
@@ -668,6 +668,7 @@ function First() {
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="1"
+                                    onClick={() => setActiveTab("NewSection")}
                                 >
                                     <path d="M12 5v14M5 12h14" />
                                 </svg>
@@ -679,6 +680,54 @@ function First() {
                 </div>
 
             </section>
+            {activeTab === "NewSection" && (
+  <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
+
+    {/* Modal Box */}
+    <div className="relative bg-[#faf9f6] w-[95%] max-w-7xl max-h-[90vh] overflow-y-auto rounded-lg p-8">
+
+      {/* ❌ Close Button */}
+      <button
+        onClick={() => setActiveTab(null)}
+        className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-black"
+      >
+        ✕
+      </button>
+
+      {/* Content */}
+      <section>
+
+        {/* Heading */}
+        <div className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+            <span className="text-red-500 mr-2">002</span>
+            Scientific Research
+          </h2>
+
+          <p className="mt-4 text-gray-600 max-w-6xl text-[25px]">
+            During the past decade, our research has explored the efficacy of
+            Urolithin A and its effects have been validated in numerous
+            peer-reviewed pre-clinical and clinical trials.
+          </p>
+
+          <button className="mt-5 px-5 py-2 border border-gray-500 rounded-full text-sm hover:bg-gray-100 transition">
+            Our Studies →
+          </button>
+        </div>
+
+        {/* Image */}
+        <div className="w-full flex justify-start">
+          <img
+            src="https://framerusercontent.com/images/hii5gAGZp77kl9LH2sOM8ujBeE.png?scale-down-to=1024&width=2088&height=1248"
+            alt="Scientific Research Graph"
+            className="w-full max-w-4xl object-contain"
+          />
+        </div>
+
+      </section>
+    </div>
+  </div>
+)}
             <section className="w-full h-[600px] mt-4">
 
                 <div
@@ -722,41 +771,49 @@ function First() {
             </section>
 
             {/*Section 7 */}
-            <section className="w-full h-[500px] mt-4 px-6 bg-black">
+            <section className="w-full h-[400px] mt-4 px-6 bg-black">
                 <div
-                    className="w-full h-full bg-cover bg-center grid flex-row items-center"
+                    className="w-full h-full bg-cover bg-center flex  items-center"
                     style={{
                         backgroundImage:
                             "url('https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/8c611702abdea847d301886430526fc7180c3e84-2800x739.jpg?rect=1,0,2799,739&w=1920&h=507&q=80&fit=crop&auto=format')",
                     }}
                 >
-                    <div className="flex">
-                        <h1 className="text-white text-[18px]">Powered by</h1>
-                        <svg
-                            viewBox="0 0 86 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-22 h-auto text-white ml-2"
-                            focusable="false"
-                        >
-                            {/* Background */}
-                            <path
-                                d="M73.4042 24H12C5.40416 24 0 18.5958 0 12C0 5.40416 5.40416 0 12 0H73.4042C80 0 85.4042 5.40416 85.4042 12C85.4042 18.5958 80 24 73.4042 24Z"
-                                fill="currentColor"
-                            />
+                    <div className="grid">
+                        <div className="flex h-15 w-55">
+                            <h1 className="text-white text-[18px]">Powered by</h1>
+                            <svg
+                                viewBox="0 0 86 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-22 h-auto text-white ml-2"
+                                focusable="false"
+                            >
+                                {/* Background */}
+                                <path
+                                    d="M73.4042 24H12C5.40416 24 0 18.5958 0 12C0 5.40416 5.40416 0 12 0H73.4042C80 0 85.4042 5.40416 85.4042 12C85.4042 18.5958 80 24 73.4042 24Z"
+                                    fill="currentColor"
+                                />
 
-                            {/* Text/Icon */}
-                            <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M48.4431 8.42509C49.1636 8.85003..."
-                                fill="#FFFFFC"
-                            />
-                        </svg>
-                    </div>
-                    <div>
-                        <h1>
-                            Change how your cells age. Explore our science-backed longevity solutions.
-                        </h1>
+                                {/* Text/Icon */}
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M48.4431 8.42509C49.1636 8.85003..."
+                                    fill="#FFFFFC"
+                                />
+                            </svg>
+                        </div>
+                        <div className="w-130 text-3xl">
+                            <span>
+                                <h1 className="text-white">
+                                    Change how your cells age.Explore our</h1></span>
+                            <span>
+                                <h1 className="text-gray-500">science-backed longevity solutions.
+                                </h1></span>
+                        </div>
+                        <div className="group bg-white w-42 h-10  p-2 px-3 mt-4 rounded-sm hover:bg-gray-500">
+                            <button className="text-[13px] text-black group-hover:text-white">SHOP SUPPLEMENTS</button>
+                        </div>
                     </div>
                 </div>
 
