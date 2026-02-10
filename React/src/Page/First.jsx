@@ -10,27 +10,28 @@ function First() {
         <>
             {/* SECTION 1 — HERO TEXT */}
             <section className="w-full min-h-screen flex justify-center items-center">
-                <div className="flex items-center justify-center px-6 py-16 m-10 p-10 max-w-3xl">
+                <div className="flex items-center justify-center px-5 py-14  p-6  max-w-3xl">
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight text-center">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-gray-900 leading-tight text-center">
 
                         Mitopure® is the
+                        <div className="flex justify-center w-max h-65px">
+                            <div className="inline-flex items-center text-7xl font-medium ">
 
-                        <span className="relative inline-flex items-center mx-2">
+                                <span>supplement</span>
 
-                            <span>supplement</span>
+                                <span className="w-30 h-30 flex-shrink-0">
+                                    <img
+                                        src="https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/354783ebfd041f0c941c51a750ac446148d17831-1200x1200.png?w=3840&h=3840&q=80&fit=crop&auto=format"
+                                        alt="Mitopure"
+                                        className="w-full h-full object-contain"
+                                        />
+                                </span>
+                                <span>that changes</span>
 
-                            <span className="ml-2 w-20 h-20">
-                                <img
-                                    src="https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/354783ebfd041f0c941c51a750ac446148d17831-1200x1200.png?w=3840&h=3840&q=80&fit=crop&auto=format"
-                                    alt="Mitopure"
-                                    className="w-full h-full object-contain"
-                                />
-                            </span>
-
-                        </span>
-
-                        that changes how cells age.
+                            </div>
+                        </div>
+                        how cells age.
 
                     </h1>
                 </div>
