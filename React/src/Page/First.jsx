@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 function First() {
@@ -707,24 +706,25 @@ function First() {
 
                         <div className="flex gap-2 mt-4">
 
-                            <div className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center bg-gray shadow">
+                            <div className="flex gap-2 ">
+                                <div className="w-10 h-10 mt-2 rounded-full border border-gray-400 flex items-center justify-center bg-gray shadow">
 
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-800"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="1"
-                                    onClick={() => setActiveTab("NewSectionPage")}
-                                >
-                                    <path d="M12 5v14M5 12h14" />
-                                </svg>
-                            <span className="text-[16px] mt-2 underline text-gray-600">
-                                HOW METHODOLOGY WORKS
-                            </span>
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        className="w-8 h-8 text-gray-800"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="1"
+                                        onClick={() => setActiveTab("NewSectionPage")}
+
+                                    >
+                                        <path d="M12 5v14M5 12h14" />
+                                    </svg>
+
+                                </div>
+                                <span className="text-[16px] mt-4 underline text-gray-600">HOW METHODOLOGY WORKS</span>
                             </div>
 
-                            
 
                         </div>
 
@@ -734,283 +734,409 @@ function First() {
             </section>
 
             {activeTab === "NewSectionPage" && (
-                <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
 
-                    {/* Modal Box */}
-                    <div className="relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-4 sm:p-8">
-                        {/* ❌ Close Button */}
-                        <button
-                            onClick={() => setActiveTab(null)}
-                            className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-black"
-                        >
-                            ✕
-                        </button>
 
-                        {/* Header */}
-                        <h2 className="text-4xl font-medium mb-10">
-                            <span className="text-red-500 mr-2">001</span>
-                            Topic Name
+    {/* ================= 📱 MOBILE VIEW ================= */}
+    <div className="lg:hidden relative bg-white w-full h-full overflow-y-auto p-5">
+
+      {/* Close */}
+      <button
+        onClick={() => setActiveTab(null)}
+        className="absolute top-4 right-4 text-2xl text-gray-600"
+      >
+        ✕
+      </button>
+
+
+      {/* Header */}
+      <div className="mb-6">
+        <h2 className="text-xl font-medium text-gray-800">
+          <span className="text-red-500 mr-2">001</span>
+          Topic Name
+        </h2>
+      </div>
+
+
+      {/* Image */}
+      <img
+        src="https://framerusercontent.com/images/3tXWvlFWx7bl8bwlT98iA9U5pL0.png?scale-down-to=1024&width=1254&height=1596"
+        alt="Mitochondria Process"
+        className="w-full max-w-xs mx-auto mb-8"
+      />
+
+
+      {/* Sections */}
+      <div className="space-y-8 text-gray-700">
+
+        <div>
+          <p className="text-red-500 text-sm font-medium mb-1">001</p>
+          <h3 className="text-lg font-medium mb-2">Fission</h3>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Mitochondria are broken down into smaller fragments and any that
+            are damaged are separated so that they can be targeted by
+            mitophagy.
+          </p>
+        </div>
+
+
+        <div>
+          <p className="text-red-500 text-sm font-medium mb-1">002</p>
+          <h3 className="text-lg font-medium mb-2">Mitophagy</h3>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Born out of a decade of rigorous scientific research and
+            discovery, we have unlocked the bioactive properties.
+          </p>
+        </div>
+
+
+        <div>
+          <p className="text-red-500 text-sm font-medium mb-1">003</p>
+          <h3 className="text-lg font-medium mb-2">Biogenesis</h3>
+          <p className="text-sm leading-relaxed text-gray-600">
+            A process that takes place when new healthy mitochondria are
+            regenerated by our cells.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    {/* ================= 💻 DESKTOP VIEW ================= */}
+    <div className="hidden lg:block relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-4 sm:p-8">
+
+      {/* Close Button */}
+      <button
+        onClick={() => setActiveTab(null)}
+        className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-black"
+      >
+        ✕
+      </button>
+
+
+      {/* Header */}
+      <h2 className="text-4xl font-medium mb-10">
+        <span className="text-red-500 mr-2">001</span>
+        Topic Name
+      </h2>
+
+
+      {/* Content */}
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+
+
+        {/* Left Image */}
+        <img
+          src="https://framerusercontent.com/images/3tXWvlFWx7bl8bwlT98iA9U5pL0.png?scale-down-to=1024&width=1254&height=1596"
+          alt="Mitochondria Process"
+          className="w-full max-w-md mx-auto"
+        />
+
+
+        {/* Right Text */}
+        <div className="space-y-10 text-gray-700">
+
+          <div>
+            <p className="text-red-500 text-2xl font-medium">001</p>
+            <h3 className="text-2xl font-normal">Fission</h3>
+            <p className="mt-2 text-gray-500 text-[19px]">
+              Mitochondria are broken down into smaller fragments and any that
+              are damaged are separated so that they can be targeted by
+              mitophagy.
+            </p>
+          </div>
+
+
+          <div>
+            <p className="text-red-500 text-2xl font-medium">002</p>
+            <h3 className="text-2xl font-normal">Mitophagy</h3>
+            <p className="mt-2 text-gray-500 text-[19px]">
+              Born out of a decade of rigorous scientific research.
+            </p>
+          </div>
+
+
+          <div>
+            <p className="text-red-500 text-2xl font-medium">003</p>
+            <h3 className="text-2xl font-normal">Biogenesis</h3>
+            <p className="mt-2 text-gray-500 text-[19px]">
+              A process that takes place when new healthy mitochondria are
+              regenerated.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+)}
+{
+    activeTab === "NewSection" && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+
+
+            {/* ================= 📱 MOBILE VIEW ================= */}
+            <div className="lg:hidden relative bg-white w-full h-full overflow-y-auto p-5">
+
+                {/* Close Button */}
+                <button
+                    onClick={() => setActiveTab(null)}
+                    className="absolute top-4 right-4 text-2xl text-gray-600"
+                >
+                    ✕
+                </button>
+
+
+                {/* Heading */}
+                <div className="mb-6">
+
+                    <h2 className="text-xl font-semibold text-gray-800">
+                        <span className="text-red-500 mr-2">002</span>
+                        Scientific Research
+                    </h2>
+
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                        During the past decade, our research has explored the efficacy of
+                        Urolithin A and its effects have been validated in numerous
+                        peer-reviewed pre-clinical and clinical trials.
+                    </p>
+
+                    <button className="mt-4 px-4 py-2 border border-gray-500 rounded-full text-sm">
+                        Our Studies →
+                    </button>
+
+                </div>
+
+
+                {/* Image */}
+                <img
+                    src="https://framerusercontent.com/images/hii5gAGZp77kl9LH2sOM8ujBeE.png?scale-down-to=1024&width=2088&height=1248"
+                    alt="Scientific Research Graph"
+                    className="w-full object-contain"
+                />
+
+            </div>
+
+
+
+            {/* ================= 💻 DESKTOP VIEW (UNCHANGED) ================= */}
+            <div className="hidden lg:block relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-8">
+
+                {/* ❌ Close Button */}
+                <button
+                    onClick={() => setActiveTab(null)}
+                    className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-black"
+                >
+                    ✕
+                </button>
+
+
+                {/* Content */}
+                <section>
+
+                    {/* Heading */}
+                    <div className="mb-10">
+
+                        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+                            <span className="text-red-500 mr-2">002</span>
+                            Scientific Research
                         </h2>
 
-                        {/* Content */}
-                        <div className="grid md:grid-cols-2 gap-12 items-start">
-
-                            {/* Left Image */}
-                            <img
-                                src="https://framerusercontent.com/images/3tXWvlFWx7bl8bwlT98iA9U5pL0.png?scale-down-to=1024&width=1254&height=1596"
-                                alt="Mitochondria Process"
-                                className="w-full max-w-md mx-auto"
-                            />
-
-                            {/* Right Text */}
-                            <div className="space-y-10 text-gray-700">
-
-                                {/* Section 1 */}
-                                <div>
-                                    <p className="text-red-500 text-2xl font-medium">001</p>
-                                    <h3 className="text-2xl font-normal">Fission</h3>
-                                    <p className="mt-2 text-gray-500 text-[19px]">
-                                        Mitochondria are broken down into smaller fragments and any that
-                                        are damaged are separated so that they can be targeted by
-                                        mitophagy.
-                                    </p>
-                                </div>
-
-                                {/* Section 2 */}
-                                <div>
-                                    <p className="text-red-500 text-2xl font-medium">002</p>
-                                    <h3 className="text-2xl font-normal">Mitophagy</h3>
-                                    <p className="mt-2 text-gray-500 text-[19px]">
-                                        Born out of a decade of rigorous scientific research and
-                                        discovery, we have unlocked the bioactive properties of the
-                                        pomegranate to develop Mitopure.
-                                    </p>
-                                </div>
-
-                                {/* Section 3 */}
-                                <div>
-                                    <p className="text-red-500 text-2xl font-medium">003</p>
-                                    <h3 className="text-2xl font-normal">Biogenesis</h3>
-                                    <p className="mt-2 text-gray-500 text-[19px]">
-                                        A process that takes place when new healthy mitochondria are
-                                        regenerated by our cells and then fused with existing healthy
-                                        ones.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-            {activeTab === "NewSection" && (
-                <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
-
-                    {/* Modal Box */}
-                    <div className="relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-8">
-                        {/* ❌ Close Button */}
-                        <button
-                            onClick={() => setActiveTab(null)}
-                            className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-black"
-                        >
-                            ✕
-                        </button>
-
-                        {/* Content */}
-                        <section>
-
-                            {/* Heading */}
-                            <div className="mb-10">
-                                <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
-                                    <span className="text-red-500 mr-2">002</span>
-                                    Scientific Research
-                                </h2>
-
-                                <p className="mt-4 text-gray-600 max-w-6xl text-[25px]">
-                                    During the past decade, our research has explored the efficacy of
-                                    Urolithin A and its effects have been validated in numerous
-                                    peer-reviewed pre-clinical and clinical trials.
-                                </p>
-
-                                <button className="mt-5 px-5 py-2 border border-gray-500 rounded-full text-sm hover:bg-gray-100 transition">
-                                    Our Studies →
-                                </button>
-                            </div>
-
-                            {/* Image */}
-                            <div className="w-full flex justify-start">
-                                <img
-                                    src="https://framerusercontent.com/images/hii5gAGZp77kl9LH2sOM8ujBeE.png?scale-down-to=1024&width=2088&height=1248"
-                                    alt="Scientific Research Graph"
-                                    className="w-full max-w-4xl object-contain"
-                                />
-                            </div>
-
-                        </section>
-                    </div>
-                </div>
-            )}
-            <section className="w-full mt-4 min-h-[400px] sm:min-h-[600px]">
-
-                {/* 📱 MOBILE VIEW */}
-                <div className="lg:hidden flex flex-col">
-
-                    {/* TEXT */}
-                    <div className="px-6 py-8 text-black bg-white">
-
-                        <h1 className="text-2xl font-semibold mb-4 leading-snug">
-                            Meet Urolithin A, a rare molecule that renews our cellular powerhouses
-                        </h1>
-
-                        <p className="text-[15px] text-gray-600 leading-relaxed mb-6">
-                            Our scientists unlocked the power of Urolithin A, a molecule that
-                            stimulates this crucial recycling and cleansing process – ultimately
-                            protecting cells from age-associated decline.
+                        <p className="mt-4 text-gray-600 max-w-6xl text-[25px]">
+                            During the past decade, our research has explored the efficacy of
+                            Urolithin A and its effects have been validated in numerous
+                            peer-reviewed pre-clinical and clinical trials.
                         </p>
 
-                        <button
-                            onClick={() => setActiveTab("NewSection")}
-                            className="flex items-center gap-2 text-sm uppercase tracking-wide border-b border-gray-700 pb-1"
-                        >
-                            <span className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center">
-                                +
-                            </span>
-                            Scientific Research
+                        <button className="mt-5 px-5 py-2 border border-gray-500 rounded-full text-sm hover:bg-gray-100 transition">
+                            Our Studies →
                         </button>
 
                     </div>
 
-                    {/* IMAGE */}
-                    <img
-                        src="https://framerusercontent.com/images/MTUNUS9x90cDqWoxGr17o7Sug.png?width=1200&height=800"
-                        alt="Urolithin A"
-                        className="w-full h-[300px] object-cover"
-                    />
-
-                </div>
-
-
-                {/* 💻 DESKTOP VIEW (UNCHANGED) */}
-                <div
-                    className="hidden lg:flex w-full h-full bg-cover bg-center flex-row-reverse items-center"
-                    style={{
-                        backgroundImage:
-                            "url('https://framerusercontent.com/images/MTUNUS9x90cDqWoxGr17o7Sug.png?width=1200&height=800')",
-                    }}
-                >
-                    <div className="flex">
-
-                        <div className="max-w-3xl px-10 text-black justify-end">
-
-                            <h1 className="text-5xl font-semibold mb-4">
-                                Meet Urolithin A, a rare molecule that renews our cellular powerhouses
-                            </h1>
-
-                            <p className="leading-relaxed text-[17px] text-gray-600">
-                                Our scientists unlocked the power of Urolithin A, a molecule that
-                                stimulates this crucial recycling and cleansing process – ultimately
-                                protecting cells from age-associated decline.
-                            </p>
-
-                            <div className="w-10 h-10 mt-2 rounded-full border border-gray-400 flex items-center justify-center bg-gray shadow">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-800"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="1"
-                                    onClick={() => setActiveTab("NewSection")}
-                                >
-                                    <path d="M12 5v14M5 12h14" />
-                                </svg>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </section>
-
-            {/*Section 7 */}
-            <section className="w-full mt-4">
-
-                <div className="lg:hidden w-full max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
 
                     {/* Image */}
-                    <img
-                        src="https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/8c611702abdea847d301886430526fc7180c3e84-2800x739.jpg?rect=1,0,2799,739&w=1920&h=507&q=80&fit=crop&auto=format"
-                        alt="Banner"
-                        className="w-full h-[220px] object-fit"
-                    />
+                    <div className="w-full flex justify-start">
 
-                    {/* Content */}
-                    <div className="bg-[#1f2430] p-6 text-center">
-
-                        <p className="text-white text-sm mb-3">
-                            Powered by{" "}
-                            <span className="bg-[#C2483F] px-2 py-1 rounded text-xs ml-1">
-                                mitopure®
-                            </span>
-                        </p>
-
-                        <h2 className="text-white text-xl font-medium leading-snug">
-                            Change how your cells age.
-                        </h2>
-
-                        <p className="text-gray-400 text-base mt-2">
-                            Explore our science-backed longevity solutions.
-                        </p>
-
-                        <button className="mt-5 px-6 py-2 bg-white text-black text-sm rounded hover:bg-gray-200 transition">
-                            SHOP SUPPLEMENTS
-                        </button>
+                        <img
+                            src="https://framerusercontent.com/images/hii5gAGZp77kl9LH2sOM8ujBeE.png?scale-down-to=1024&width=2088&height=1248"
+                            alt="Scientific Research Graph"
+                            className="w-full max-w-4xl object-contain"
+                        />
 
                     </div>
-                </div>
 
+                </section>
 
-                <div
-                    className="hidden lg:flex w-full h-[400px] bg-cover bg-center items-center"
-                    style={{
-                        backgroundImage:
-                            "url('https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/8c611702abdea847d301886430526fc7180c3e84-2800x739.jpg?rect=1,0,2799,739&w=1920&h=507&q=80&fit=crop&auto=format')",
-                    }}
-                >
-                    <div className="grid mx-2">
+            </div>
 
-                        <div className="flex h-15 w-55">
-                            <h1 className="text-white text-[18px]">
-                                Powered by{" "}
-                                <span className="bg-[#C2483F] text-white text-[16px] p-1 rounded-md mx-2">
-                                    mitopure®
-                                </span>
-                            </h1>
-                        </div>
-
-                        <div className="w-full max-w-xl text-xl sm:text-3xl">
-                            <h1 className="text-white">
-                                Change how your cells age. Explore our
-                            </h1>
-
-                            <h1 className="text-gray-500">
-                                science-backed longevity solutions.
-                            </h1>
-                        </div>
-
-                        <div className="group bg-white w-42 h-10 p-2 px-3 mt-4 rounded-sm hover:bg-gray-500">
-                            <button className="text-[13px] text-black group-hover:text-white">
-                                SHOP SUPPLEMENTS
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-
-            </section>
         </div>
+    )
+}
+<section className="w-full mt-4 min-h-[400px] lg:h-[600px]">
+
+    {/* 📱 MOBILE VIEW */}
+    <div className="lg:hidden flex flex-col">
+
+        {/* TEXT */}
+        <div className="px-6 py-8 text-black bg-white">
+
+            <h1 className="text-2xl font-semibold mb-4 leading-snug">
+                Meet Urolithin A, a rare molecule that renews our cellular powerhouses
+            </h1>
+
+            <p className="text-[15px] text-gray-600 leading-relaxed mb-6">
+                Our scientists unlocked the power of Urolithin A, a molecule that
+                stimulates this crucial recycling and cleansing process – ultimately
+                protecting cells from age-associated decline.
+            </p>
+
+            <button
+                onClick={() => setActiveTab("NewSection")}
+                className="flex items-center gap-2 text-sm uppercase tracking-wide border-b border-gray-700 pb-1"
+            >
+                <span className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center">
+                    +
+                </span>
+                Scientific Research
+            </button>
+
+        </div>
+
+        {/* IMAGE */}
+        <img
+            src="https://framerusercontent.com/images/MTUNUS9x90cDqWoxGr17o7Sug.png?width=1200&height=800"
+            alt="Urolithin A"
+            className="w-full h-[300px] object-cover"
+        />
+
+    </div>
+
+
+    {/* 💻 DESKTOP VIEW (UNCHANGED) */}
+    <div
+        className="w-full h-full bg-cover bg-center hidden lg:flex flex-row-reverse items-center"
+        style={{
+            backgroundImage:
+                "url('https://framerusercontent.com/images/MTUNUS9x90cDqWoxGr17o7Sug.png?width=1200&height=800')",
+        }}
+    >
+        <div className="flex ">
+            <div className="max-w-3xl px-10 text-black justify-end">
+
+                <h1 className="text-5xl font-semibold mb-4">
+                    Meet Urolithin A, a rare molecule that renews our cellular powerhouses                            </h1>
+
+                <p className="leading-relaxed text-[17px] text-gray-600">
+                    Our scientists unlocked the power of Urolithin A, a molecule that stimulates this crucial recycling and cleansing process
+                    - ultimately protecting cells from age-associated decline.
+
+
+                </p>
+                <div className="w-10 h-10 mt-2 rounded-full border border-gray-400 flex items-center justify-center bg-gray shadow">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        className="w-8 h-8 text-gray-800"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        onClick={() => setActiveTab("NewSection")}
+
+                    >
+                        <path d="M12 5v14M5 12h14" />
+                    </svg>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+{/*Section 7 */ }
+<section className="w-full mt-4">
+
+    <div className="lg:hidden w-full max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
+
+        {/* Image */}
+        <img
+            src="https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/8c611702abdea847d301886430526fc7180c3e84-2800x739.jpg?rect=1,0,2799,739&w=1920&h=507&q=80&fit=crop&auto=format"
+            alt="Banner"
+            className="w-full h-[220px] object-fit"
+        />
+
+        {/* Content */}
+        <div className="bg-[#1f2430] p-6 text-center">
+
+            <p className="text-white text-sm mb-3">
+                Powered by{" "}
+                <span className="bg-[#C2483F] px-2 py-1 rounded text-xs ml-1">
+                    mitopure®
+                </span>
+            </p>
+
+            <h2 className="text-white text-xl font-medium leading-snug">
+                Change how your cells age.
+            </h2>
+
+            <p className="text-gray-400 text-base mt-2">
+                Explore our science-backed longevity solutions.
+            </p>
+
+            <button className="mt-5 px-6 py-2 bg-white text-black text-sm rounded hover:bg-gray-200 transition">
+                SHOP SUPPLEMENTS
+            </button>
+
+        </div>
+    </div>
+
+
+    <div
+        className="hidden lg:flex w-full h-[400px] bg-cover bg-center items-center"
+        style={{
+            backgroundImage:
+                "url('https://cdn.sanity.io/images/bxsu76x0/timeline-nutrition/8c611702abdea847d301886430526fc7180c3e84-2800x739.jpg?rect=1,0,2799,739&w=1920&h=507&q=80&fit=crop&auto=format')",
+        }}
+    >
+        <div className="grid mx-2">
+
+            <div className="flex h-15 w-55">
+                <h1 className="text-white text-[18px]">
+                    Powered by{" "}
+                    <span className="bg-[#C2483F] text-white text-[16px] p-1 rounded-md mx-2">
+                        mitopure®
+                    </span>
+                </h1>
+            </div>
+
+            <div className="w-full max-w-xl text-xl sm:text-3xl">
+                <h1 className="text-white">
+                    Change how your cells age. Explore our
+                </h1>
+
+                <h1 className="text-gray-500">
+                    science-backed longevity solutions.
+                </h1>
+            </div>
+
+            <div className="group bg-white w-42 h-10 p-2 px-3 mt-4 rounded-sm hover:bg-gray-500">
+                <button className="text-[13px] text-black group-hover:text-white">
+                    SHOP SUPPLEMENTS
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+        </div >
     );
 }
 
