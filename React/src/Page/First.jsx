@@ -75,420 +75,652 @@ function First() {
                     </h2>
 
 
-                    <div className="absolute 
-  top-[30%] left-[22%] 
-  lg:top-[22%] lg:left-[30%] 
-  z-20">
-                        <button
-                            onClick={() => setActive(active === 1 ? null : 1)}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
-                        >
-                            +
-                        </button>
+                    {/* HOTSPOT 1 */}
+                    <div
+                        className="absolute 
+    top-[30%] left-[22%] 
+    lg:top-[22%] lg:left-[30%] 
+    z-20"
+                    >
+                        {/* + Button (Hide when active) */}
+                        {active !== 1 && (
+                            <button
+                                onClick={() => setActive(1)}
+                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
+                            >
+                                +
+                            </button>
+                        )}
 
                         {/* Popup */}
                         {active === 1 && (
-                            <div className="absolute left-12 top-0 w-[92vw] sm:w-[360px] bg-white p-5 rounded-xl shadow-2xl text-left max-h-[350px] overflow-y-auto">
+                            <div
+                                className="
+        fixed inset-0 z-50 flex items-center justify-center bg-black/40
+        sm:absolute sm:left-12 sm:top-0 sm:w-[360px] sm:bg-transparent sm:block
+      "
+                            >
+                                <div
+                                    className="
+          relative
+          w-full h-full
+          bg-white
+                    text-left
 
-                                {/* Title */}
-                                <h3 className="font-semibold text-2xl mb-2">
-                                    Brain
-                                </h3>
+          rounded-none
+          shadow-none
+          flex flex-col
+          overflow-hidden
 
-                                {/* Description */}
-                                <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                                    The human brain uses about 25% of the human body’s metabolic energy
-                                    and is particularly sensitive to the aging process. Scientists are
-                                    studying mitochondria’s role in brain health, with early research
-                                    suggesting they are key players in cognitive function and aging.
-                                </p>
+          sm:w-[360px] sm:h-auto sm:rounded-xl sm:shadow-2xl sm:max-h-[350px]
+        "
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setActive(null)}
+                                        className="absolute top-4 right-4 text-gray-500 hover:text-black"
+                                    >
+                                        ✕
+                                    </button>
 
-                                {/* Research */}
-                                <div className="border-t pt-3">
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-4 sm:p-5">
+                                        {/* Title */}
+                                        <h3 className="font-semibold text-2xl sm:text-2xl mb-2">
+                                            Brain
+                                        </h3>
 
-                                    <p className="text-2xl font-medium mb-2">
-                                        Scientific Research
-                                    </p>
+                                        {/* Description */}
+                                        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                                            The human brain uses about 25% of the human body’s metabolic energy
+                                            and is particularly sensitive to the aging process. Scientists are
+                                            studying mitochondria’s role in brain health, with early research
+                                            suggesting they are key players in cognitive function and aging.
+                                        </p>
 
-                                    <ul className="text-xs text-gray-600 space-y-2">
+                                        {/* Research */}
+                                        <div className="border-t pt-3">
+                                            <p className="text-2xl sm:text-2xl font-medium mb-2">
+                                                Scientific Research
+                                            </p>
 
-                                        <li>
-                                            Grimm, A. &amp; Eckert, A. (2017). Brain aging and neurodegeneration:
-                                            from a mitochondrial point of view. <i>J. Neurochem.</i>, 143, 418–431.
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1111/jnc.14037"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1111/jnc.14037
-                                            </a>
-                                        </li>
+                                            <ul className="text-xs text-gray-600 space-y-3">
+                                                <li>
+                                                    Grimm, A. &amp; Eckert, A. (2017). Brain aging and neurodegeneration.
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1111/jnc.14037"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1111/jnc.14037
+                                                    </a>
+                                                </li>
 
-                                        <li>
-                                            Fang et al. (2019). Mitophagy inhibits amyloid-β and tau pathology and
-                                            reverses cognitive deficits in models of Alzheimer's disease.
-                                            <i> Nature Neuroscience</i>, 22(3), 401–412.
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1038/s41593-018-0332-9"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1038/s41593-018-0332-9
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
+                                                <li>
+                                                    Fang et al. (2019). Mitophagy inhibits amyloid-β.
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1038/s41593-018-0332-9"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1038/s41593-018-0332-9
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
                         )}
-
                     </div>
 
-                    {/* HOTSPOT 2 (Example) */}
-                    <div className="absolute 
-  top-[40%] left-[35%] 
-  lg:top-[35%] lg:left-[38%] 
-  z-20">
-                        <button
-                            onClick={() => setActive(active === 2 ? null : 2)}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
-                        >
-                            +
-                        </button>
+                    {/* HOTSPOT 2 */}
+                    <div
+                        className="absolute 
+    top-[40%] left-[35%] 
+    lg:top-[35%] lg:left-[38%] 
+    z-20"
+                    >
+                        {/* + Button (Hide when active) */}
+                        {active !== 2 && (
+                            <button
+                                onClick={() => setActive(2)}
+                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
+                            >
+                                +
+                            </button>
+                        )}
 
+                        {/* Popup */}
                         {active === 2 && (
-                            <div className="absolute left-12 top-0 w-[92vw] sm:w-[360px] bg-white p-4 rounded-lg shadow-xl text-left max-h-[350px] overflow-y-auto">
+                            <div
+                                className="
+        fixed inset-0 z-50 flex items-center justify-center bg-black/40
+        sm:absolute sm:left-12 sm:top-0 sm:w-[360px] sm:bg-transparent sm:block
+      "
+                            >
+                                <div
+                                    className="
+    relative
+    w-full h-full
+    bg-white
+    rounded-none
+          text-left
 
-                                <h3 className="font-semibold text-2xl mb-2">
-                                    Energy
-                                </h3>
+    sm:w-[360px] sm:h-auto sm:rounded-xl
+          rounded-xl
+          shadow-2xl
+          flex flex-col
+          overflow-hidden
 
-                                <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                                    Skin requires a lot of energy provided by mitochondria. As you age,
-                                    dysfunctional mitochondria lead to reduced energy production,
-                                    cellular decline and signs of aging like sagginess, dullness,
-                                    wrinkles and weakened skin barrier. Enhanced mitochondrial
-                                    function can improve skin cellular energy, youthfulness,
-                                    resilience and overall health.
+          sm:h-auto sm:max-h-[350px]
+        "
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setActive(null)}
+                                        className="absolute top-4 right-4 text-gray-500 hover:text-black"
+                                    >
+                                        ✕
+                                    </button>
 
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-4">
+                                        <h3 className="font-semibold text-2xl mb-2">
+                                            Energy
+                                        </h3>
 
-                                </p>
-                                {/* Research */}
-                                <div className="border-t pt-3">
+                                        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                                            Skin requires a lot of energy provided by mitochondria. As you age,
+                                            dysfunctional mitochondria lead to reduced energy production,
+                                            cellular decline and signs of aging like sagginess, dullness,
+                                            wrinkles and weakened skin barrier. Enhanced mitochondrial
+                                            function can improve skin cellular energy, youthfulness,
+                                            resilience and overall health.
+                                        </p>
 
-                                    <p className="text-2xl font-medium mb-2">
-                                        Scientific Research
-                                    </p>
+                                        {/* Research */}
+                                        <div className="border-t pt-3">
+                                            <p className="text-2xl font-medium mb-2">
+                                                Scientific Research
+                                            </p>
 
-                                    <ul className="text-xs text-gray-600 space-y-2">
+                                            <ul className="text-xs text-gray-600 space-y-2">
+                                                <li>
+                                                    Martini H, Passos JF. Cellular senescence: all roads lead to
+                                                    mitochondria. FEBS J. 2023;290(5):1186-1202.
+                                                </li>
 
-                                        <li>
-                                            Martini H, Passos JF. Cellular senescence: all roads lead to mitochondria. FEBS J. 2023;290(5):1186- 1202.
-                                            <br />
-
-                                        </li>
-                                        <li>
-                                            Dodig S, Čepelak I, Pavić I. Hallmarks of senescence and aging. Biochem Med (Zagreb). 2019;29(3):030501. doi:10.11613/BM.2019.030501
-
-
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1038/s41593-018-0332-9"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1038/s41593-018-0332-9
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
+                                                <li>
+                                                    Dodig S, Čepelak I, Pavić I. Hallmarks of senescence and aging.
+                                                    Biochem Med (Zagreb). 2019;29(3):030501.
+                                                    doi:10.11613/BM.2019.030501
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1038/s41593-018-0332-9"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1038/s41593-018-0332-9
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )}
                     </div>
 
 
-                    {/* HOTSPOT 3 (Example) */}
-                    <div className="absolute 
-  top-[48%] left-[45%] 
-  lg:top-[50%] lg:left-[52%] 
-  z-20">
-                        <button
-                            onClick={() => setActive(active === 3 ? null : 3)}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
-                        >
-                            +
-                        </button>
+                    {/* HOTSPOT 3 */}
+                    <div
+                        className="absolute 
+    top-[48%] left-[45%] 
+    lg:top-[50%] lg:left-[52%] 
+    z-20"
+                    >
+                        {/* + Button (Hide when active) */}
+                        {active !== 3 && (
+                            <button
+                                onClick={() => setActive(3)}
+                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
+                            >
+                                +
+                            </button>
+                        )}
 
+                        {/* Popup */}
                         {active === 3 && (
-                            <div className="absolute left-12 top-0 w-[92vw] sm:w-[360px] bg-white p-4 rounded-lg shadow-xl text-left max-h-[350px] overflow-y-auto">
+                            <div
+                                className="
+        fixed inset-0 z-50 flex items-center justify-center bg-black/40
+        sm:absolute sm:left-12 sm:top-0 sm:w-[360px] sm:bg-transparent sm:block
+      "
+                            >
+                                <div
+                                    className="
+          relative
+          w-full h-full
+          bg-white
+          text-left
+          rounded-none
+          shadow-none
+          flex flex-col
+          overflow-hidden
 
-                                <h3 className="font-semibold text-2xl mb-3 ">
-                                    Immune system
-                                </h3>
+          sm:w-[360px] sm:h-auto sm:rounded-xl sm:shadow-2xl sm:max-h-[350px]
+        "
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setActive(null)}
+                                        className="absolute top-4 right-4 text-gray-500 hover:text-black"
+                                    >
+                                        ✕
+                                    </button>
 
-                                <p className="text-sm text-gray-600 ">
-                                    The immune system becomes less effective over time. Evidence is rising on the
-                                    importance of mitochondria in immune aging.
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-4">
+                                        <h3 className="font-semibold text-2xl mb-3">
+                                            Immune system
+                                        </h3>
 
-                                </p>
-                                {/* Research */}
-                                <div className="border-t pt-4">
+                                        <p className="text-sm text-gray-600 mb-3">
+                                            The immune system becomes less effective over time. Evidence is rising on the
+                                            importance of mitochondria in immune aging.
+                                        </p>
 
-                                    <p className="text-2xl font-medium mb-3 flex ">
-                                        Scientific Research
-                                    </p>
+                                        {/* Research */}
+                                        <div className="border-t pt-4">
+                                            <p className="text-2xl font-medium mb-3  flex">
+                                                Scientific Research
+                                            </p>
 
-                                    <ul className="text-xs text-gray-600 space-y-2">
+                                            <ul className="text-xs text-gray-600 space-y-2">
+                                                <li>
+                                                    Denk, D., Petrocelli, V., Rinsch, C., Greten, F. R., et al. (2022).
+                                                    Expansion of T memory stem cells with superior anti-tumor immunity by
+                                                    Urolithin A-induced mitophagy. <i>Immunity</i>, 55(11).
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1016/j.immuni.2022.09.014"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1016/j.immuni.2022.09.014
+                                                    </a>
+                                                </li>
 
-                                        <li>
-                                            Denk, D., Petrocelli, V., Rinsch, C., Greten, F. R., et al. (2022).
-                                            Expansion of T memory stem cells with superior anti-tumor immunity by
-                                            Urolithin A-induced mitophagy. <i>Immunity</i>, 55(11).
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1016/j.immuni.2022.09.014"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1016/j.immuni.2022.09.014
-                                            </a>
-                                        </li>
-                                        <li>
-                                            Fang, E. F., Hou, Y., Palikaras, K., et al. (2019).
-                                            Mitophagy inhibits amyloid-β and tau pathology and reverses cognitive
-                                            deficits in models of Alzheimer’s disease. <i>Nat Neurosci</i>, 22,
-                                            401–412.
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1038/s41593-018-0332-9"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1038/s41593-018-0332-9
-                                            </a>
-                                        </li>
-                                        <li>
-                                            Jang, J. Y., Blum, A., Liu, J., &amp; Finkel, T. (2018).
-                                            The role of mitochondria in aging. <i>J. Clin. Invest.</i>, 128(9),
-                                            3662–3670.
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1172/JCI120842"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1172/JCI120842
-                                            </a>
-                                        </li>
-                                    </ul>
+                                                <li>
+                                                    Fang, E. F., Hou, Y., Palikaras, K., et al. (2019).
+                                                    Mitophagy inhibits amyloid-β and tau pathology and reverses cognitive
+                                                    deficits in models of Alzheimer’s disease. <i>Nat Neurosci</i>, 22,
+                                                    401–412.
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1038/s41593-018-0332-9"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1038/s41593-018-0332-9
+                                                    </a>
+                                                </li>
 
+                                                <li>
+                                                    Jang, J. Y., Blum, A., Liu, J., &amp; Finkel, T. (2018).
+                                                    The role of mitochondria in aging. <i>J. Clin. Invest.</i>, 128(9),
+                                                    3662–3670.
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1172/JCI120842"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1172/JCI120842
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )}
                     </div>
-                    {/* HOTSPOT 4 (Example) */}
-                    <div className="absolute 
-  top-[58%] left-[28%] 
-  lg:top-[60%] lg:left-[38%] 
-  z-20">
-                        <button
-                            onClick={() => setActive(active === 4 ? null : 4)}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
-                        >
-                            +
-                        </button>
+                    {/* HOTSPOT 4 */}
+                    <div
+                        className="absolute 
+    top-[58%] left-[28%] 
+    lg:top-[60%] lg:left-[38%] 
+    z-20"
+                    >
+                        {/* + Button (Hide when active) */}
+                        {active !== 4 && (
+                            <button
+                                onClick={() => setActive(4)}
+                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
+                            >
+                                +
+                            </button>
+                        )}
 
+                        {/* Popup */}
                         {active === 4 && (
-                            <div className="absolute left-12 top-0 w-[92vw] sm:w-[360px] bg-white p-4 rounded-lg shadow-xl text-left  max-h-[350px] overflow-y-auto">
+                            <div
+                                className="
+        fixed inset-0 z-50 flex items-center justify-center bg-black/40
+        sm:absolute sm:left-12 sm:top-0 sm:w-[360px] sm:bg-transparent sm:block
+      "
+                            >
+                                <div
+                                    className="
+          relative
+          w-full h-full
+          bg-white
+                    text-left
 
-                                <h3 className="font-semibold text-2xl mb-2">
-                                    Joints
-                                </h3>
+          rounded-none
+          shadow-none
+          flex flex-col
+          overflow-hidden
 
-                                <p className="text-sm text-gray-600 ">
-                                    Joint health is key for mobility, independence and quality of life as you age.
-                                    The cells that keep joints functional progressively decline in function.
-                                    There is emerging science around the link between mitochondrial health and joint health.
+          sm:w-[360px] sm:h-auto sm:rounded-xl sm:shadow-2xl sm:max-h-[350px]
+        "
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setActive(null)}
+                                        className="absolute top-4 right-4 text-gray-500 hover:text-black"
+                                    >
+                                        ✕
+                                    </button>
 
-                                </p>
-                                {/*Research */}
-                                <div className="border-t pt-3">
-                                    <p className="text-2xl font-medium mb-2">
-                                        Scientific Research
-                                    </p>
-                                    <ul className="text-xs text-gray-600 space-y-2">
-                                        <li>
-                                            Mao X, Fu P, Wang L and Xiang C (2020) Mitochondria: Potential Targets for Osteoarthritis. Front. Med. 7:581402. doi:
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-4">
+                                        <h3 className="font-semibold text-2xl mb-2">
+                                            Joints
+                                        </h3>
 
-                                            <br />
-                                            <a
-                                                href="https://doi.org/10.1038/s41593-018-0332-9"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://doi.org/10.1038/s41593-018-0332-9
-                                            </a>
-                                        </li>
-                                    </ul>
+                                        <p className="text-sm text-gray-600 mb-3">
+                                            Joint health is key for mobility, independence and quality of life as you age.
+                                            The cells that keep joints functional progressively decline in function.
+                                            There is emerging science around the link between mitochondrial health and joint health.
+                                        </p>
+
+                                        {/* Research */}
+                                        <div className="border-t pt-3">
+                                            <p className="text-2xl font-medium mb-2">
+                                                Scientific Research
+                                            </p>
+
+                                            <ul className="text-xs text-gray-600 space-y-2">
+                                                <li>
+                                                    Mao X, Fu P, Wang L and Xiang C (2020) Mitochondria: Potential Targets
+                                                    for Osteoarthritis. Front. Med. 7:581402.
+                                                    <br />
+                                                    <a
+                                                        href="https://doi.org/10.1038/s41593-018-0332-9"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://doi.org/10.1038/s41593-018-0332-9
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )}
                     </div>
-                    {/* HOTSPOT 4 (Example) */}
-                    <div className="absolute 
-  top-[68%] left-[55%] 
-  lg:top-[72%] lg:left-[66%] 
-  z-20">
-                        <button
-                            onClick={() => setActive(active === 5 ? null : 5)}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
-                        >
-                            +
-                        </button>
+                    {/* HOTSPOT 5 */}
+                    <div
+                        className="absolute 
+    top-[68%] left-[55%] 
+    lg:top-[72%] lg:left-[66%] 
+    z-20"
+                    >
+                        {/* + Button (Hide when active) */}
+                        {active !== 5 && (
+                            <button
+                                onClick={() => setActive(5)}
+                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
+                            >
+                                +
+                            </button>
+                        )}
 
+                        {/* Popup */}
                         {active === 5 && (
-                            <div className="absolute left-12 top-0 w-[92vw] sm:w-[360px] bg-white p-4 rounded-lg shadow-xl text-left  max-h-[350px] overflow-y-auto">
+                            <div
+                                className="
+        fixed inset-0 z-50 flex items-center justify-center bg-black/40
+        sm:absolute sm:left-12 sm:top-0 sm:w-[360px] sm:bg-transparent sm:block
+      "
+                            >
+                                <div
+                                    className="
+          relative
+          w-full h-full
+          bg-white
+                    text-left
 
-                                <h3 className="font-semibold text-2xl mb-2">
-                                    Digestive system
-                                </h3>
+          rounded-none
+          shadow-none
+          flex flex-col
+          overflow-hidden
 
-                                <p className="text-sm text-gray-600 mb-2">
-                                    The digestive system is essential to metabolic health, immunity and
-                                    overall well-being. Mitochondrial health has been associated with
-                                    improved gut barrier health.
-                                </p>
-                                {/*Research */}
-                                <div className="border-t pt-3">
-                                    <p className="text-2xl font-medium mb-2">
-                                        Scientific Research
-                                    </p>
-                                    <ul className="text-xs text-gray-600 space-y-2">
-                                        <li>
-                                            Singh, R. &amp;, Chandrashekharappa, S., Bodduluri, S.R. et al. Enhancement of the gut barrier
-                                            integrity by a microbial metabolite through the Nrf2 pathway.
-                                            <i>Nat Commun 10.</i> , 89 (2019).
-                                            <br />
-                                            <a
-                                                href="https://www.nature.com/articles/s41467-018-07859-7"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://www.nature.com/articles/s41467-018-07859-7                                            </a>
-                                        </li>
-                                        <li>
-                                            Toney, A.M. &amp;, Fan, R., Xian, Y., Chaidez, V., Ramer-Tait, A.E. and Chung, S. (2019), Urolithin A, a Gut Metabolite,
-                                            Improves Insulin Sensitivity Through Augmentation of Mitochondrial Function and Biogenesis.<i> Obesity </i>, 27: 612-620.
-                                            <br />
-                                            <a
-                                                href="https://onlinelibrary.wiley.com/doi/10.1002/oby.22404"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://onlinelibrary.wiley.com/doi/10.1002/oby.22404                                                </a>
-                                        </li>
-                                        <li>
-                                            Urolithin A Prevents Cisplatin-Induced Nephrotoxicity Melissa Guada, Raghu Ganugula, Manicka Vadhanam and Majeti N.V. Ravi Kumar Journal of
-                                            Pharmacology and Experimental Therapeutics October 1, 2017, 363 (1) 58-65; DOI:
-                                            <br />
-                                            <a
-                                                href="https://linkinghub.elsevier.com/retrieve/pii/S0022356524271731"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://linkinghub.elsevier.com/retrieve/pii/S0022356524271731                                                                                         </a>
-                                        </li>
-                                    </ul>
+          sm:w-[360px] sm:h-auto sm:rounded-xl sm:shadow-2xl sm:max-h-[350px]
+        "
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setActive(null)}
+                                        className="absolute top-4 right-4 text-gray-500 hover:text-black"
+                                    >
+                                        ✕
+                                    </button>
+
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-4">
+                                        <h3 className="font-semibold text-2xl mb-2">
+                                            Digestive system
+                                        </h3>
+
+                                        <p className="text-sm text-gray-600 mb-2">
+                                            The digestive system is essential to metabolic health, immunity and
+                                            overall well-being. Mitochondrial health has been associated with
+                                            improved gut barrier health.
+                                        </p>
+
+                                        {/* Research */}
+                                        <div className="border-t pt-3">
+                                            <p className="text-2xl font-medium mb-2">
+                                                Scientific Research
+                                            </p>
+
+                                            <ul className="text-xs text-gray-600 space-y-2">
+                                                <li>
+                                                    Singh, R. &amp;, Chandrashekharappa, S., Bodduluri, S.R. et al.
+                                                    Enhancement of the gut barrier integrity by a microbial metabolite
+                                                    through the Nrf2 pathway. <i>Nat Commun 10.</i>, 89 (2019).
+                                                    <br />
+                                                    <a
+                                                        href="https://www.nature.com/articles/s41467-018-07859-7"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://www.nature.com/articles/s41467-018-07859-7
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    Toney, A.M. &amp;, Fan, R., Xian, Y., Chaidez, V., Ramer-Tait, A.E.
+                                                    and Chung, S. (2019), Urolithin A, a Gut Metabolite, Improves Insulin
+                                                    Sensitivity Through Augmentation of Mitochondrial Function and
+                                                    Biogenesis. <i>Obesity</i>, 27: 612-620.
+                                                    <br />
+                                                    <a
+                                                        href="https://onlinelibrary.wiley.com/doi/10.1002/oby.22404"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://onlinelibrary.wiley.com/doi/10.1002/oby.22404
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    Urolithin A Prevents Cisplatin-Induced Nephrotoxicity Melissa Guada,
+                                                    Raghu Ganugula, Manicka Vadhanam and Majeti N.V. Ravi Kumar Journal of
+                                                    Pharmacology and Experimental Therapeutics October 1, 2017, 363 (1)
+                                                    58-65.
+                                                    <br />
+                                                    <a
+                                                        href="https://linkinghub.elsevier.com/retrieve/pii/S0022356524271731"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://linkinghub.elsevier.com/retrieve/pii/S0022356524271731
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )}
                     </div>
+                    {/* HOTSPOT 6 */}
+                    <div
+                        className="absolute 
+    top-[80%] left-[40%] 
+    lg:top-[85%] lg:left-[44%] 
+    z-20"
+                    >
+                        {/* + Button (Hide when active) */}
+                        {active !== 6 && (
+                            <button
+                                onClick={() => setActive(6)}
+                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
+                            >
+                                +
+                            </button>
+                        )}
 
-                    <div className="absolute 
-  top-[80%] left-[40%] 
-  lg:top-[90%] lg:left-[44%] 
-  z-20">
-                        <button
-                            onClick={() => setActive(active === 6 ? null : 6)}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-bold shadow-lg hover:scale-110 transition"
-                        >
-                            +
-                        </button>
-
+                        {/* Popup */}
                         {active === 6 && (
-                            <div className="absolute left-12 -top-54 w-[92vw] sm:w-[360px] bg-white p-4 rounded-lg shadow-xl max-h-[350px] overflow-y-auto text-left ">
+                            <div
+                                className="
+        fixed inset-0 z-50 flex items-center justify-center bg-black/40
+        sm:absolute sm:left-12 sm:top-0 sm:w-[360px] sm:bg-transparent sm:block
+      "
+                            >
+                                <div
+                                    className="
+          relative
+          w-full h-full
+          bg-white
+                    text-left
 
-                                <h3 className="font-semibold text-2xl mb-2">
-                                    Skeletal muscle
+          rounded-none
+          shadow-none
+          flex flex-col
+          overflow-hidden
 
-                                </h3>
+          sm:w-[360px] sm:h-auto sm:rounded-xl sm:shadow-2xl sm:max-h-[350px]
+        "
+                                >
+                                    {/* Close Button */}
+                                    <button
+                                        onClick={() => setActive(null)}
+                                        className="absolute top-4 right-4 text-gray-500 hover:text-black"
+                                    >
+                                        ✕
+                                    </button>
 
-                                <p className="text-sm text-gray-600">
-                                    During strenuous exercise, the rate of energy use in skeletal muscles can increase more than 100-fold almost instantly. Muscle cells need healthy mitochondria in order to meet this energy demand. Our clinical studies have shown improved muscle strength as a result of improved mitochondrial function
-                                </p>
-                                {/* Research */}
-                                <div className="border-t pt-3">
-                                    <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                                        Scientific Research
-                                    </p>
-                                    <ul className="text-xs text-gray-600 space-y-2">
-                                        <li>
-                                            Andreux, P.A. &amp;, van Diemen, M.P.J., Heezen, M.R. et al.
-                                            Mitochondrial function is impaired in the skeletal muscle of pre-frail elderly.<i> Sci Rep 8 </i>, 8548 (2018).
-                                            <br />
-                                            <a
-                                                href="https://www.nature.com/articles/s41598-018-26944-x"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://www.nature.com/articles/s41598-018-26944-x
-                                            </a>
-                                        </li>
-                                        <li>
-                                            Ryu, D. &amp;, Mouchiroud, L., Andreux, P. et al. Urolithin A induces mitophagy and prolongs lifespan in C.
-                                            elegans and increases muscle function in rodents. <i>Nat Med 22</i>, 879–888 (2016).
-                                            <br />
-                                            <a
-                                                href="https://www.nature.com/articles/nm.4132"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://www.nature.com/articles/nm.4132
-                                            </a>
-                                        </li>
-                                        <li>
-                                            Luan P &amp;, D'Amico D, Andreux PA, Laurila PP, Wohlwend M, Li H, Imamura de Lima T, Place N, Rinsch C, Zanou N, Auwerx J.
-                                            Urolithin A improves muscle function by inducing mitophagy in muscular dystrophy.<i>Sci Transl Med 13</i> : eabb0319, 2021.
-                                            <br />
-                                            <a
-                                                href="https://www.science.org/doi/10.1126/scitranslmed.abb0319"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                            >
-                                                https://www.science.org/doi/10.1126/scitranslmed.abb0319
-                                            </a>
-                                        </li>
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-4">
+                                        <h3 className="font-semibold text-2xl mb-2">
+                                            Skeletal muscle
+                                        </h3>
 
-                                    </ul>
+                                        <p className="text-sm text-gray-600 mb-3">
+                                            During strenuous exercise, the rate of energy use in skeletal muscles
+                                            can increase more than 100-fold almost instantly. Muscle cells need
+                                            healthy mitochondria in order to meet this energy demand. Our clinical
+                                            studies have shown improved muscle strength as a result of improved
+                                            mitochondrial function.
+                                        </p>
+
+                                        {/* Research */}
+                                        <div className="border-t pt-3">
+                                            <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                                                Scientific Research
+                                            </p>
+
+                                            <ul className="text-xs text-gray-600 space-y-2">
+                                                <li>
+                                                    Andreux, P.A., van Diemen, M.P.J., Heezen, M.R. et al.
+                                                    Mitochondrial function is impaired in the skeletal muscle of
+                                                    pre-frail elderly. <i>Sci Rep 8</i>, 8548 (2018).
+                                                    <br />
+                                                    <a
+                                                        href="https://www.nature.com/articles/s41598-018-26944-x"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://www.nature.com/articles/s41598-018-26944-x
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    Ryu, D., Mouchiroud, L., Andreux, P. et al.
+                                                    Urolithin A induces mitophagy and prolongs lifespan in C. elegans
+                                                    and increases muscle function in rodents.
+                                                    <i> Nat Med 22</i>, 879–888 (2016).
+                                                    <br />
+                                                    <a
+                                                        href="https://www.nature.com/articles/nm.4132"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://www.nature.com/articles/nm.4132
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    Luan P, D'Amico D, Andreux PA, Laurila PP, Wohlwend M, Li H,
+                                                    Imamura de Lima T, Place N, Rinsch C, Zanou N, Auwerx J.
+                                                    Urolithin A improves muscle function by inducing mitophagy in
+                                                    muscular dystrophy.
+                                                    <i> Sci Transl Med 13</i>: eabb0319, 2021.
+                                                    <br />
+                                                    <a
+                                                        href="https://www.science.org/doi/10.1126/scitranslmed.abb0319"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 underline break-all"
+                                                    >
+                                                        https://www.science.org/doi/10.1126/scitranslmed.abb0319
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )}
