@@ -41,7 +41,7 @@ function First() {
   }, []);
   return (
 
-    <div className="w-full ">            {/* SECTION 1 — HERO TEXT */}
+    <div className="w-full ">         
       <section className="w-full min-h-screen flex justify-center items-center">
         <div className="flex items-center justify-center px-5 py-14  p-6  max-w-3xl">
 
@@ -84,7 +84,7 @@ function First() {
 
       <section className="w-full min-h-screen lg:h-[160vh] h-full relative overflow-hidden mt-4">
         {/* Background Image */}
-        {/* ================= 📱 MOBILE IMAGE ================= */}
+        {/* ================= MOBILE IMAGE ================= */}
         <div className="lg:hidden w-full h-screen relative overflow-hidden rounded-2xl">
 
           <img
@@ -117,7 +117,7 @@ function First() {
     lg:top-[22%] lg:left-[30%] 
     z-20"
           >
-            {/* + Button (Hide when active) */}
+            {/*  Button  */}
             {active !== 1 && (
               <button
                 onClick={() => setActive(1)}
@@ -220,7 +220,7 @@ function First() {
     lg:top-[35%] lg:left-[38%] 
     z-20"
           >
-            {/* + Button (Hide when active) */}
+            {/*  Button  */}
             {active !== 2 && (
               <button
                 onClick={() => setActive(2)}
@@ -320,7 +320,7 @@ function First() {
     lg:top-[50%] lg:left-[52%] 
     z-20"
           >
-            {/* + Button (Hide when active) */}
+            {/* Button  */}
             {active !== 3 && (
               <button
                 onClick={() => setActive(3)}
@@ -437,7 +437,7 @@ function First() {
     lg:top-[60%] lg:left-[38%] 
     z-20"
           >
-            {/* + Button (Hide when active) */}
+            {/*  Button  */}
             {active !== 4 && (
               <button
                 onClick={() => setActive(4)}
@@ -996,7 +996,7 @@ function First() {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
 
 
-          {/* ================= 📱 MOBILE VIEW ================= */}
+          {/* =================  MOBILE VIEW ================= */}
           <div className="lg:hidden relative bg-white w-full h-full overflow-y-auto p-5">
 
             {/* Close */}
@@ -1063,7 +1063,7 @@ function First() {
 
 
 
-          {/* ================= 💻 DESKTOP VIEW ================= */}
+          {/* =================DESKTOP VIEW ================= */}
           <div className="hidden lg:block relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-4 sm:p-8">
 
             {/* Close Button */}
@@ -1138,7 +1138,7 @@ function First() {
           <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
 
 
-            {/* ================= 📱 MOBILE VIEW ================= */}
+            {/* ================= MOBILE VIEW ================= */}
             <div className="lg:hidden relative bg-white w-full h-full overflow-y-auto p-5">
 
               {/* Close Button */}
@@ -1182,10 +1182,9 @@ function First() {
 
 
 
-            {/* ================= 💻 DESKTOP VIEW (UNCHANGED) ================= */}
+            {/* ================= DESKTOP VIEW  ================= */}
             <div className="hidden lg:block relative bg-white w-full h-full max-w-none max-h-none overflow-y-auto p-8">
 
-              {/* ❌ Close Button */}
               <button
                 onClick={() => setActiveTab(null)}
                 className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-black"
@@ -1238,7 +1237,6 @@ function First() {
       }
       <section className="w-full mt-4 min-h-[400px] lg:h-[600px]">
 
-        {/* 📱 MOBILE VIEW */}
         <div className="lg:hidden flex flex-col">
 
           {/* TEXT */}
@@ -1276,7 +1274,6 @@ function First() {
         </div>
 
 
-        {/* 💻 DESKTOP VIEW (UNCHANGED) */}
         <div
           className="w-full h-full bg-cover bg-center hidden lg:flex flex-row-reverse items-center"
           style={{
@@ -1288,7 +1285,7 @@ function First() {
             <div className="max-w-3xl px-10 text-black justify-end">
 
               <h1 className="text-5xl font-semibold mb-4">
-                Meet Urolithin A, a rare molecule that renews our cellular powerhouses                            </h1>
+                Meet Urolithin A, a rare molecule that renews our cellular powerhouses</h1>
 
               <p className="leading-relaxed text-[17px] text-gray-600">
                 Our scientists unlocked the power of Urolithin A, a molecule that stimulates this crucial recycling and cleansing process
