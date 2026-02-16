@@ -42,15 +42,17 @@ function First() {
   return (
 
     <div className="w-full ">
-      {/* SECTION 1 — IMAGE BANNER */}
-      <section
-        className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen bg-center bg-cover flex items-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80')",
-        }}
-      >
+      {/* SECTION 1 — HERO BANNER */}
+      <section className="w-full px-4 md:px-8 lg:px-6 mt-4">
+        <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-[75vh] lg:h-[90vh] rounded-3xl overflow-hidden">
 
+          {/* HERO IMAGE */}
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80"
+            alt="Hero banner"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </section>
       {/* SECTION 2 — IMAGE BANNER */}
       <section className="w-full h-[40vh] lg:min-h-screen flex justify-center items-center">
