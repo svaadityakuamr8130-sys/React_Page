@@ -832,7 +832,7 @@ function First() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-[16rem] sm:w-[20rem] md:w-[28rem] lg:w-[44rem] h-auto lg:h-[38rem] mx-auto md:ml-auto mt-2 mb-2">
+          <div className="w-full sm:w-[20rem] md:w-[28rem] lg:w-[44rem] h-auto lg:h-[38rem] mx-auto md:ml-auto mt-2 mb-2">
             <img
               src="https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=1290&height=1292"
               alt="Smiling woman"
