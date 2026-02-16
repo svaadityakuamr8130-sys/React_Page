@@ -81,9 +81,6 @@ function First() {
         </div>
       </section>
 
-
-
-
       <section className="w-full min-h-screen lg:h-[160vh] h-full relative overflow-hidden mt-4">
         {/* Background Image */}
         {/* ================= MOBILE IMAGE ================= */}
@@ -835,11 +832,11 @@ function First() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className=" md:justify-end lg:w-[44rem] lg:h-[38rem] w-[22rem] h-[22rem] lg:m-0 m-6">
+          <div className="w-[16rem] sm:w-[20rem] md:w-[28rem] lg:w-[44rem] h-auto lg:h-[38rem] mx-auto md:ml-auto mt-2 mb-2">
             <img
               src="https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=1290&height=1292"
               alt="Smiling woman"
-              className="w-full h-full object-cover  "
+              className="w-full h-full object-cover"
             />
           </div>
 
