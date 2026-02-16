@@ -41,9 +41,20 @@ function First() {
   }, []);
   return (
 
-    <div className="w-full ">         
-      <section className="w-full min-h-screen flex justify-center items-center">
-        <div className="flex items-center justify-center px-5 py-14  p-6  max-w-3xl">
+    <div className="w-full ">
+       {/* SECTION 1 — IMAGE BANNER */}
+      <section
+        className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen bg-center bg-cover flex items-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80')",
+        }}
+      >
+
+      </section>
+             {/* SECTION 2 — IMAGE BANNER */}
+      <section className="w-full h-[40vh] lg:min-h-screen flex justify-center items-center">
+        <div className="flex items-center justify-center px-5 py-12  p-6 ">
 
           <h1 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl 
                     font-medium text-gray-900 leading-snug text-center">
@@ -70,16 +81,7 @@ function First() {
         </div>
       </section>
 
-      {/* SECTION 2 — IMAGE BANNER */}
-      <section
-        className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen bg-center bg-cover flex items-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80')",
-        }}
-      >
-
-      </section>
+     
 
 
       <section className="w-full min-h-screen lg:h-[160vh] h-full relative overflow-hidden mt-4">
@@ -812,6 +814,36 @@ function First() {
           </div>
         </div>
 
+      </section>
+
+      {/*New Section with text and images */}
+      <section className="w-full bg-white lg:px-5 py-10 lg:mb-4">
+        <div className=" lg:flex lg:flex-row justify-left flex flex-col-reverse">
+          {/* LEFT CONTENT */}
+          <div className="lg:w-[58rem] w-full">
+            <h1 className="text-5xl lg:text-6xl font-semibold leading-tight text-gray-900 lg:m-0 m-4">
+              Mitopure® Urolithin A, the <br />
+              nutrient that can reenergize cells
+            </h1>
+
+            <p className=" text-gray-600 text-[17px] lg:text-[17px] md:text-lg lg:m-0 m-4">
+              As we age, our cells age. Mitopure® is a pure and patented form of
+              Urolithin A, the first postbiotic nutrient shown to trigger a crucial
+              recycling process within our cells called mitophagy, targeting
+              age-related cellular decline.*
+            </p>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className=" md:justify-end lg:w-[44rem] lg:h-[38rem] w-[22rem] h-[22rem] lg:m-0 m-6">
+            <img
+              src="https://framerusercontent.com/images/GUS3ttJJ9DvsFB8TXPtgUzpkmg.png?width=1290&height=1292"
+              alt="Smiling woman"
+              className="w-full h-full object-cover  "
+            />
+          </div>
+
+        </div>
       </section>
 
       <section className="min-h-[200vh] relative ">
