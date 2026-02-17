@@ -1511,16 +1511,16 @@ function First() {
         </div>
       </section>
       {/*New Section */}
-      <section className="bg-[#f7f6f2]  py-6 md:py-20">
-        <div className="m-2" >
+      <section className="bg-[#f7f6f2]  py-6 md:py-4">
+        <div className="m-2 " >
 
           {/* Heading */}
-          <h2 className="text-4xl  md:text-4xl font-semibold text-gray-900 lg:ml-0 m-2">
+          <h2 className="text-4xl lg:text-5xl lg:p-2  md:text-4xl font-semibold text-gray-900 lg:ml-0 m-2">
             Rigorously tested and made from high-quality ingredients
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-base text-gray-700 w-full p-2">
+          <p className="text-lg lg:text-xl md:text-base text-gray-700 w-full p-2">
             We believe that it's our responsibility to take the extra steps necessary
             to ensure that our products are safe and effective, and we are committed
             to upholding these high standards for all of our dietary supplements.
@@ -1543,8 +1543,8 @@ function First() {
                 key={index}
                 className="flex items-center justify-between border-b border-dotted border-gray-300 py-4"
               >
-                <span className="text-gray-800 text-xl font-medium">{item}</span>
-                <span className="text-2xl font-light">+</span>
+                <span className="text-gray-800 text-xl lg:ml-4 font-medium">{item}</span>
+                <span className="text-2xl lg:text-4xl lg:mr-6 font-light">+</span>
               </div>
             ))}
 
@@ -1552,41 +1552,41 @@ function First() {
         </div>
       </section>
       {/*New Section 10 */}
-      <section className="bg-[#f6f5f1] px-4 py-12 md:py-20">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className="bg-[#f6f5f1] px-4 py-8 md:py-20 lg:py-6">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-26 items-center">
 
           {/* LEFT CONTENT */}
-          <div>
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900">
+          <div className="lg:mr-10">
+            <h2 className="text-4xl  lg:ml-0 md:text-5xl font-semibold text-gray-900 lg:p-2">
               7 placebo-controlled <br className="hidden md:block" />
               clinical studies
             </h2>
 
-            <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed max-w-md">
+            <p className="mt-4 lg:mt-0 text-lg md:text-base text-gray-700 leading-relaxed lg:p-2">
               For over 15 years, we have pioneered meaningful scientific discoveries
               on Urolithin A and put them to the scrutiny of the scientific community
               by publishing in high impact, peer-reviewed journals.
             </p>
 
-            <button className="mt-6 inline-flex items-center gap-3 bg-[#2b2b26] text-white px-6 py-3 text-sm font-medium rounded-md hover:bg-black transition">
+            <button className="mt-4 inline-flex items-center lg:gap-85 gap-55 bg-[#2b2b26] w-full text-white lg:px-2 px-4 py-2 text-sm font-medium rounded-md hover:bg-black transition">
               OUR STUDIES
-              <span className="text-lg">→</span>
+              <span className="text-3xl ">→</span>
             </button>
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center lg:ml-10 md:justify-end w-full">
             <img
               src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=600&q=80"
               alt="Scientific pipette"
-              className="w-48 md:w-72 object-contain"
+              className="w-full  h-full object-contain"
             />
           </div>
 
         </div>
 
         {/* BOTTOM TEXT */}
-        <div className="mt-12 text-center">
+        <div className="mt-6 text-center">
           <h3 className="text-4xl md:text-4xl font-semibold text-gray-900">
             Life-Altering Science™
           </h3>
