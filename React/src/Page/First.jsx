@@ -4,6 +4,7 @@ function First() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("muscle");
   const [active, setActive] = useState(null);
+  const [openAccordion, setOpenAccordion] = useState(null);
 
   const sectionsRef = useRef([]);
 
@@ -29,7 +30,7 @@ function First() {
         });
       },
       {
-        threshold: 0.5, // important
+        threshold: 0.5,
       }
     );
 
@@ -1511,16 +1512,16 @@ function First() {
         </div>
       </section>
       {/*New Section */}
-      <section className="bg-[#f7f6f2]  py-6 md:py-4">
-        <div className="m-2 " >
+      <section className="bg-[#f7f6f2] py-6 md:py-4">
+        <div className="m-2">
 
           {/* Heading */}
-          <h2 className="text-4xl lg:text-5xl lg:p-2  md:text-4xl font-semibold text-gray-900 lg:ml-0 m-2">
+          <h2 className="text-4xl lg:text-5xl md:text-4xl font-semibold text-gray-900 m-2">
             Rigorously tested and made from high-quality ingredients
           </h2>
 
           {/* Description */}
-          <p className="text-lg lg:text-xl md:text-base text-gray-700 w-full p-2">
+          <p className="text-lg lg:text-xl md:text-base text-gray-700 p-2">
             We believe that it's our responsibility to take the extra steps necessary
             to ensure that our products are safe and effective, and we are committed
             to upholding these high standards for all of our dietary supplements.
@@ -1529,25 +1530,73 @@ function First() {
           {/* Divider */}
           <div className="mt-8 border-t border-dotted border-gray-300" />
 
-          {/* List */}
+          {/* Accordion List */}
           <div className="mt-4">
-
             {[
-              "Placebo Controlled Clinical Studies",
-              "FDA GRAS",
-              "NSF for Sports",
-              "FSSC 22000",
-              "SMETA",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between border-b border-dotted border-gray-300 py-4"
-              >
-                <span className="text-gray-800 text-xl lg:ml-4 font-medium">{item}</span>
-                <span className="text-2xl lg:text-4xl lg:mr-6 font-light">+</span>
-              </div>
-            ))}
+              {
+                title: "Placebo Controlled Clinical Studies",
+                content:
+                  "All studies are designed to eliminate bias and ensure statistically reliable results."
+              },
+              {
+                title: "FDA GRAS",
+                content:
+                  "Ingredients are Generally Recognized As Safe (GRAS) by the FDA."
+              },
+              {
+                title: "NSF for Sports",
+                content:
+                  "Certified to ensure products are free from banned substances."
+              },
+              {
+                title: "FSSC 22000",
+                content:
+                  "Global food safety certification ensuring quality manufacturing."
+              },
+              {
+                title: "SMETA",
+                content:
+                  "Ethical trade audit ensuring responsible sourcing and operations."
+              }
+            ].map((item, index) => {
+              const isOpen = openAccordion === index;
 
+              return (
+                <div
+                  key={index}
+                  className="border-b border-dotted border-gray-300"
+                >
+                  {/* Accordion Header */}
+                  <button
+                    onClick={() =>
+                      setOpenAccordion(isOpen ? null : index)
+                    }
+                    className="w-full flex items-center justify-between py-4 text-left"
+                  >
+                    <span className="text-gray-800 text-xl lg:ml-4 font-medium">
+                      {item.title}
+                    </span>
+
+                    <span
+                      className={`text-3xl lg:mr-6 font-light transition-transform duration-300 ${isOpen ? "rotate-45" : ""
+                        }`}
+                    >
+                      +
+                    </span>
+                  </button>
+
+                  {/* Accordion Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                  >
+                    <p className="px-4 pb-4 text-gray-600 text-sm lg:text-xl">
+                      {item.content}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1590,6 +1639,53 @@ function First() {
           <h3 className="text-4xl md:text-4xl font-semibold text-gray-900">
             Life-Altering Science™
           </h3>
+        </div>
+      </section>
+
+      {/*Section 11 */}
+      <section className="w-full flex justify-center bg-gray-100 py-10 px-4">
+        <div
+          className="
+      max-w-md w-full bg-white rounded-2xl overflow-hidden shadow-lg
+      lg:max-w-5xl lg:flex
+    "
+        >
+          {/* Image */}
+          <div
+            className="
+        bg-gray-200 flex justify-center items-center p-6
+        lg:w-1/2 lg:p-10
+      "
+          >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0668/1486/9571/files/Muscalarpro_capsule.png?v=1770369222"
+              alt="Mitopure capsules"
+              className="
+          w-56 object-contain
+          lg:w-80
+        "
+            />
+          </div>
+
+          {/* Content */}
+          <div
+            className="
+        bg-[#2f3a40] text-white text-center px-6 py-8
+        lg:w-1/2 lg:text-left lg:px-12 lg:py-16
+      "
+          >
+            <h2 className="text-4xl md:text-4xl lg:text-5xl font-semibold leading-snug">
+              Mitopure®,
+              <br />
+              the only Urolithin A you can trust
+            </h2>
+
+            <p className="text-[16px] md:text-base lg:text-lg text-gray-300 mt-4 leading-relaxed">
+              Choose Mitopure with confidence. As the inventors, we guarantee the
+              utmost safety and quality. Don&apos;t fall for imitations trying to
+              capitalize on our 15+ years of research.
+            </p>
+          </div>
         </div>
       </section>
     </div >
