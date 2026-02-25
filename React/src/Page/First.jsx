@@ -1590,7 +1590,7 @@ function First() {
                     className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <p className="px-4 pb-4 text-gray-600 text-lg lg:text-xl">
+                    <p className="px-5 pb-4 text-gray-600 text-lg lg:text-xl">
                       {item.content}
                     </p>
                   </div>
